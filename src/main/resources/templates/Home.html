@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/Home.css">
+      <style>
+       .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        </style>
+      <script>
+		  function Gotosign() {
+            // Replace '/sign' with the actual route you want to navigate to
+            window.location.href = '/sign';
+        }
+        function GotoLogin() {
+            // Replace '/sign' with the actual route you want to navigate to
+            window.location.href = '/login';
+        }
+         function openModal(modalId) {
+                document.getElementById(modalId).style.display = "block";
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+            }
+	  </script>
+</head>
+<body>
+
+    <header>
+        <h1>Keto</h1>
+    </header>
+
+    <nav>
+        <span>Logo</span>
+        <div>
+            <button onclick= "Gotosign()">Sign Up</button>
+            <button onclick = "GotoLogin()">Login</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="left-container">
+        
+        
+        <!-- Insert Section -->
+        <button onclick="openModal('insertModal')">Insert Record</button>
+        <div id="insertModal" class="modal">
+            <button class="close-btn" onclick="closeModal('insertModal')">X</button>
+            <form action="#" method="post" class="management-form">
+                <h2>Insert Record</h2>
+
+                <label for="insertName">Name:</label>
+                <input type="text" id="insertName" name="insertName" required>
+
+                <label for="insertAge">Age:</label>
+                <input type="number" id="insertAge" name="insertAge" required>
+
+                <label for="insertAddress">Address:</label>
+                <textarea id="insertAddress" name="insertAddress" required></textarea>
+
+                <button type="submit" onclick="closeModal('insertModal')">Insert Record</button>
+            </form>
+        </div>
+
+        <!-- Delete Section -->
+        <button onclick="openModal('deleteModal')">Delete Record</button>
+        <div id="deleteModal" class="modal">
+            <button class="close-btn" onclick="closeModal('deleteModal')">X</button>
+            <form action="#" method="post" class="management-form">
+                <h2>Delete Record</h2>
+
+                <label for="deleteRecordId">Record ID:</label>
+                <input type="number" id="deleteRecordId" name="deleteRecordId" required>
+
+                <button type="submit" onclick="closeModal('deleteModal')">Delete Record</button>
+            </form>
+        </div>
+
+        <!-- Alter Section -->
+        <button onclick="openModal('alterModal')">Alter Record</button>
+        <div id="alterModal" class="modal">
+            <button class="close-btn" onclick="closeModal('alterModal')">X</button>
+            <form action="#" method="post" class="management-form">
+                <h2>Alter Record</h2>
+
+                <label for="alterRecordId">Record ID:</label>
+                <input type="number" id="alterRecordId" name="alterRecordId" required>
+
+                <label for="alterName">New Name:</label>
+                <input type="text" id="alterName" name="alterName">
+
+                <label for="alterAge">New Age:</label>
+                <input type="number" id="alterAge" name="alterAge">
+
+                <label for="alterAddress">New Address:</label>
+                <textarea id="alterAddress" name="alterAddress"></textarea>
+
+                <button type="submit" onclick="closeModal('alterModal')">Alter Record</button>
+            </form>
+        
+        </div>
+</div>
+        <div class="right-container">
+            <h2>Image</h2>
+            <ul>
+               
+            </ul>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Book Management System</h1>
+            <nav>
+                <ul>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="sign">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+       
+        <main>
+            <div class="column" id="left-column">
+                <h2>Add New Book</h2>
+                <div class="input-container">
+                    <input type="text" id="bookTitleInput" placeholder="Title">
+                    <input type="text" id="bookAuthorInput" placeholder="Author">
+                    <input type="number" id="bookPagesInput" placeholder="Pages">
+                    <button id="addBook">Add Book</button>
+                </div>
+            </div>
+            <div class="column" id="middle-column">
+                <h2>Edit Book</h2>
+                <select id="editBookSelect">
+                    <option value="" disabled selected>Select Book to Edit</option>
+                    <!-- Options will be added dynamically using JavaScript -->
+                </select>
+                <div class="input-container">
+                    <input type="text" id="editTitleInput" placeholder="New Title">
+                    <input type="text" id="editAuthorInput" placeholder="New Author">
+                    <input type="number" id="editPagesInput" placeholder="New Pages">
+                    <button id="editBook">Edit Book</button>
+                </div>
+            </div>
+            <div class="column" id="right-column">
+                <h2>Delete Book</h2>
+                <select id="deleteBookSelect">
+                    <option value="" disabled selected>Select Book to Delete</option>
+                    <!-- Options will be added dynamically using JavaScript -->
+                </select>
+                <button id="deleteBook">Delete Book</button>
+            </div>
+        </main>
+        <!-- Table to display all books -->
+<table id="booksTable"></table>
+
+    </div>
+      <button id="recordButton">Record</button>
+      <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Book Management System. All rights reserved.</p>
+            <p>123 Street, City, Country | Phone: +123456789 | Email: info@example.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>
